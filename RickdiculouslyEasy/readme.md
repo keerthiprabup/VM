@@ -1,6 +1,6 @@
 nmap things
 
-                └─$ sudo nmap -sV -sS -p- -O 192.168.42.92
+                └─$ sudo nmap -sV -sS -p- 192.168.42.92
                 Starting Nmap 7.93 ( https://nmap.org ) at 2023-05-17 15:28 IST
                 Nmap scan report for 192.168.42.92
                 Host is up (0.00050s latency).
