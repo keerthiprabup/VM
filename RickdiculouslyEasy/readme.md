@@ -48,6 +48,15 @@ http interface flag 9090 flag:
 ftp flag Users flag:
 3.FLAG{Whoa this is unexpected}
 
+Reverse shell using nc command in the port 60000
+command:
+
+    $nc <ip> 60000
+
+reverse shell flag:
+4.FLAG{Flip the pickle Morty!} - 10 Points
+
+
 Busting the directories in the Morty's website using nikto
 result:
 
@@ -75,7 +84,7 @@ result:
       + 1 host(s) tested
 
 Opening the /passwords/ dir in the ip has a file FLAG.txt 
-4.FLAG{Yeah d- just don't do it.} 
+5.FLAG{Yeah d- just don't do it.} 
 
 The directory also has a html file called passwords.html where it has a password commented on its html code
 password: winter
@@ -132,12 +141,10 @@ command:
 uname: Summer   pass: winter   satisfied!
 Inside the Summer dir we have a FLAG.txt 
 
-5.FLAG{Get off the high road Summer!} 
+6.FLAG{Get off the high road Summer!} 
 
 
 
-reverse shell flag:
-6.FLAG{Flip the pickle Morty!} - 10 Points
 
 
 pass:Meeseek
@@ -150,14 +157,15 @@ safe flag:
 
 
 safe hint:
-Ricks password hints:
- (This is incase I forget.. I just hope I don't forget how to write a script to generate potential passwords. Also, sudo is wheely good.)
-Follow these clues, in order
+
+      Ricks password hints:
+       (This is incase I forget.. I just hope I don't forget how to write a script to generate potential passwords. Also, sudo is wheely good.)
+      Follow these clues, in order
 
 
-1 uppercase character
-1 digit
-One of the words in my old bands name.  ---> Flesh Curtains
+      1 uppercase character
+      1 digit
+      One of the words in my old bands name.  ---> Flesh Curtains
 
 crunch the password list
 crunch 7 7 ,%Flesh -O >>yourfile.txt
@@ -171,3 +179,6 @@ $ hydra -l RickSanchez -P yourfile.txt 192.168.42.8 ssh  -s  22222
 
 flag root access:
 9.FLAG: {Ionic Defibrillator} - 30 points
+
+
+
