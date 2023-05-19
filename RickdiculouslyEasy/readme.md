@@ -39,14 +39,17 @@ Using nmap on the ip using SYN and version scan.
 
 
 Flag from fingerprint:
-1.FLAG:{TheyFoundMyBackDoorMorty}
+
+      1.FLAG:{TheyFoundMyBackDoorMorty}
 
 
 http interface flag 9090 flag:
-2.FLAG {THERE IS NO ZEUS, IN YOUR FACE!}
+
+      2.FLAG {THERE IS NO ZEUS, IN YOUR FACE!}
 
 ftp flag Users flag:
-3.FLAG{Whoa this is unexpected}
+      
+      3.FLAG{Whoa this is unexpected}
 
 Reverse shell using nc command in the port 60000
 command:
@@ -54,7 +57,8 @@ command:
     $nc <ip> 60000
 
 reverse shell flag:
-4.FLAG{Flip the pickle Morty!} - 10 Points
+      
+      4.FLAG{Flip the pickle Morty!} - 10 Points
 
 
 Busting the directories in the Morty's website using nikto
@@ -84,7 +88,8 @@ result:
       + 1 host(s) tested
 
 Opening the /passwords/ dir in the ip has a file FLAG.txt 
-5.FLAG{Yeah d- just don't do it.} 
+      
+      5.FLAG{Yeah d- just don't do it.} 
 
 The directory also has a html file called passwords.html where it has a password commented on its html code
 password: winter
@@ -141,7 +146,8 @@ command:
 uname: Summer   pass: winter   satisfied!
 Inside the Summer dir we have a FLAG.txt 
 
-6.FLAG{Get off the high road Summer!} 
+    6.FLAG{Get off the high road Summer!} 
+
 
 
 
