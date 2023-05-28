@@ -64,12 +64,67 @@ We will get some password from the inspection on the link:
 
             http://192.168.42.54/nothing/
 commented pass:
-<!--
-#my secret pass
-freedom
-password
-helloworld!
-diana
-iloveroot
--->
-      
+            
+            #my secret pass
+            freedom
+            password
+            helloworld!
+            diana
+            iloveroot
+Busting the directories of the ip:
+
+command:
+        
+            $dirb http://192.168.42.54 /usr/share/dirb/wordlists/big.txt
+
+Result:
+
+            -----------------
+            DIRB v2.22    
+            By The Dark Raver
+            -----------------
+
+            START_TIME: Sun May 28 20:45:04 2023
+            URL_BASE: http://192.168.42.54/
+            WORDLIST_FILES: /usr/share/dirb/wordlists/big.txt
+
+            -----------------
+
+            GENERATED WORDS: 20458                                                         
+
+            ---- Scanning URL: http://192.168.42.54/ ----
+            + http://192.168.42.54/cgi-bin/ (CODE:403|SIZE:289)                                                                
+            + http://192.168.42.54/index (CODE:200|SIZE:3618)                                                                  
+            ==> DIRECTORY: http://192.168.42.54/nothing/                                                                       
+            + http://192.168.42.54/robots (CODE:200|SIZE:102)                                                                  
+            + http://192.168.42.54/robots.txt (CODE:200|SIZE:102)                                                              
+            ==> DIRECTORY: http://192.168.42.54/secure/                                                                        
+            + http://192.168.42.54/server-status (CODE:403|SIZE:294)                                                           
+            ==> DIRECTORY: http://192.168.42.54/tmp/                                                                           
+            ==> DIRECTORY: http://192.168.42.54/uploads/                                                                       
+
+            ---- Entering directory: http://192.168.42.54/nothing/ ----
+            + http://192.168.42.54/nothing/index (CODE:200|SIZE:180)                                                           
+            + http://192.168.42.54/nothing/pass (CODE:200|SIZE:57)                                                             
+
+            ---- Entering directory: http://192.168.42.54/secure/ ----
+            (!) WARNING: Directory IS LISTABLE. No need to scan it.                        
+                (Use mode '-w' if you want to scan it anyway)
+
+            ---- Entering directory: http://192.168.42.54/tmp/ ----
+            (!) WARNING: Directory IS LISTABLE. No need to scan it.                        
+                (Use mode '-w' if you want to scan it anyway)
+
+            ---- Entering directory: http://192.168.42.54/uploads/ ----
+            (!) WARNING: Directory IS LISTABLE. No need to scan it.                        
+                (Use mode '-w' if you want to scan it anyway)
+
+            -----------------
+            END_TIME: Sun May 28 20:45:09 2023
+            DOWNLOADED: 40916 - FOUND: 7
+We got a backup.zip inside the dir:
+
+            http://192.168.42.54/secure/          
+The zip is password locked and we have some wordlist from the nothing dir. We can try it with john or else manually typing it one by one.
+
+The pass is:
