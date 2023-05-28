@@ -365,5 +365,14 @@ Reverse shell script from pentest monkey;
 You can set your system ip and port to connect in the script.
 Open nc in listening mode on your terminal:
 
-            $nc -l <port>
+            $nc -lp <port>
 Upload the csv script in the browser. 
+
+At this moment we will have a reverse shell on our terminal
+
+
+
+
+
+
+
