@@ -167,6 +167,9 @@ It specifies a format for the csv as:
 
             CSV file format : Name, Mobile, Email, Group code, Tags
 Make a CSV file using libre office cal having the columns (Name, Mobile, Email, Group code, Tags)
+		
+![image](https://github.com/keerthiprabup/VM/assets/116485904/aed0000e-7ed8-4215-b9c1-48fece13fa1f)
+
 
 Enter a php cli excecutable in any column of the csv file and upload it.
 Boom!! we were getting responses from the backend. Now we can upload the reverse shell script in the csv file.
