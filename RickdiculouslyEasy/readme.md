@@ -1,3 +1,8 @@
+# RickdiculouslyEasy Walkthrough
+
+
+
+
 Using nmap on the ip using SYN and version scan.
 
                 └─$ sudo nmap -sV -sS -p- 192.168.42.92
