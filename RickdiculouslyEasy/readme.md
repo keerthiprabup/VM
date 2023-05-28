@@ -225,10 +225,11 @@ Use the commands to crunch the password:
 Bruteforce the password list on the ssh server using the username RickSanchez using $hydra command:
 
     $ hydra -l RickSanchez -P yourfile.txt 192.168.42.8 ssh  -s  22222
-The password is:
+The password is: P7Curtains
 
+Use the command $sudo su to switch to root terminal
 
-flag root access:
+We get file containing the flag!
 ### 9.FLAG: {Ionic Defibrillator} - 30 points
 
 
