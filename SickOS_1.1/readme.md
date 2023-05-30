@@ -280,5 +280,7 @@ The php reverse shell script I used to upload:
         }
 
         ?> 
+Upload the reverse shell script
+
 
 
