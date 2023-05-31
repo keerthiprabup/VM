@@ -297,6 +297,7 @@ We got some creds inside in the file config.php from the dir:
 
 
 The passwd showed us a new user sickos
+
 ![image](https://github.com/keerthiprabup/VM/assets/116485904/e33d41aa-b4cb-4532-b70c-0a2781a8a92a)
 
 We also have ssh server running on port 22. So we can try the user creds on that.
