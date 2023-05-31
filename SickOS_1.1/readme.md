@@ -283,4 +283,34 @@ The php reverse shell script I used to upload:
 Upload the reverse shell script
 
 
+You will get the php script uploaded and you can access it in the url
+          
+          http://192.168.42.36/wolfcms/public/
+Open netcat in our terminal on the port 1234 and then open the link in the browser so that reverse shell can be obtained
+
+Boom we get the reverse shell!!
+
+We got some creds inside in the file config.php from the dir:
+          
+          /var/www/wolfcms/
+![image](https://github.com/keerthiprabup/VM/assets/116485904/c0c1df91-5a4c-4ec9-a1db-63ac79c82a9e)
+
+
+The passwd showed us a new user sickos
+![image](https://github.com/keerthiprabup/VM/assets/116485904/e33d41aa-b4cb-4532-b70c-0a2781a8a92a)
+
+We also have ssh server running on port 22. So we can try the user creds on that.
+
+The password for the sickos user in ssh is 'john@123' that we get from the config file.
+
+
+Open a new terminal and execute the command;
+          
+          ssh sickos@192.168.42.36 -p 22
+
+After getting the shell putting the command sudo su directs you to the root shell
+![image](https://github.com/keerthiprabup/VM/assets/116485904/794998e0-1bd5-4ac2-b145-9c09a5fb063d)
+
+The flag is at dir /root/a0216ea4d51874464078c618298b1367.txt given in the challenge description.
+![image](https://github.com/keerthiprabup/VM/assets/116485904/b304742e-200d-4047-9a0b-2e0e41fe0d72)
 
