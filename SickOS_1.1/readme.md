@@ -313,5 +313,7 @@ After getting the shell putting the command sudo su directs you to the root shel
 ![image](https://github.com/keerthiprabup/VM/assets/116485904/794998e0-1bd5-4ac2-b145-9c09a5fb063d)
 
 The flag is at dir /root/a0216ea4d51874464078c618298b1367.txt given in the challenge description.
+
+
 ![image](https://github.com/keerthiprabup/VM/assets/116485904/b304742e-200d-4047-9a0b-2e0e41fe0d72)
 
