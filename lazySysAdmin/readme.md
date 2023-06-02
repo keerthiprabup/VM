@@ -149,6 +149,10 @@ Busting directories with nikto:
         ---------------------------------------------------------------------------
         + 1 host(s) tested
         
+
+
+
+
 Opening the wordpress in the browser results,
 ![image](https://github.com/keerthiprabup/VM/assets/116485904/dc99ae95-dc38-4b07-bef4-f893c641b2ed)
 
