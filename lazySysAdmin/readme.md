@@ -148,6 +148,17 @@ Busting directories with nikto:
         + End Time:           2023-06-02 18:28:11 (GMT5.5) (6 seconds)
         ---------------------------------------------------------------------------
         + 1 host(s) tested
+        
+Opening the wordpress in the browser results,
+![image](https://github.com/keerthiprabup/VM/assets/116485904/dc99ae95-dc38-4b07-bef4-f893c641b2ed)
+
+        
+        
+        
+        
+        
+        
+
 We could see smb is hosted in the vm by nmap scan
 
 So we can try connecting to it with smbclient command:
@@ -156,13 +167,27 @@ So we can try connecting to it with smbclient command:
         
 Results:
 
+![image](https://github.com/keerthiprabup/VM/assets/116485904/9af721da-33cc-464c-8dd0-f551c574e8e7)
 
 
+Getting into the sharename share$ using the command:
+
+Boom! we got a smb client!
+![image](https://github.com/keerthiprabup/VM/assets/116485904/c33db267-e129-4ef0-b5e0-3f1cee52006c)
+
+We could find a config file inside the dir:
+
+       
+       /wordpress/
+
+![image](https://github.com/keerthiprabup/VM/assets/116485904/0c1f9579-8b2a-4eed-9b16-c4557b30a0a9)
 
 
+Get the config file to your local system using get command.
+![image](https://github.com/keerthiprabup/VM/assets/116485904/f60d82dd-1311-4f52-b664-19ca36f21c76)
 
-
-TogieMYSQL12345^^
+We got some mysql credentials from the file:
+![image](https://github.com/keerthiprabup/VM/assets/116485904/1d69af55-92ee-42b0-8d70-a04bfc3483ed)
 
 
 
