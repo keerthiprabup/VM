@@ -1,4 +1,9 @@
-         Currently scanning: 192.168.48.0/16   |   Screen View: Unique Hosts           
+# LazySysAdmin VM Walkthrough
+
+
+Netdiscover result:
+
+       Currently scanning: 192.168.48.0/16   |   Screen View: Unique Hosts           
                                                                                        
          3 Captured ARP Req/Rep packets, from 2 hosts.   Total size: 126               
          _____________________________________________________________________________
@@ -7,8 +12,8 @@
          192.168.42.129  9a:d1:53:35:56:b5      2      84  Unknown vendor              
          192.168.42.55   08:00:27:c1:be:89      1      42  PCS Systemtechnik GmbH 
          
-         
-         
+Nmap results:         
+
         $sudo nmap -sS -sV -p- -A 192.168.42.55
         
         
@@ -83,9 +88,7 @@
         Nmap done: 1 IP address (1 host up) scanned in 23.67 seconds
         
         
-        
-        
-        
+use the link to get some direct        
         
         http://192.168.42.55/robots.txt
         
@@ -94,18 +97,9 @@
         Disallow: /old/
         Disallow: /test/
         Disallow: /TR2/
-        Disallow: /Backnode_files/
-        
-        
-        
-        
-        
-        
-        
-        nikto 
-        
-        
-        
+        Disallow: /Backnode_files/       
+Busting directories with nikto:
+
         
         $nikto -h http://192.168.42.55                                                             
         
@@ -154,9 +148,21 @@
         + End Time:           2023-06-02 18:28:11 (GMT5.5) (6 seconds)
         ---------------------------------------------------------------------------
         + 1 host(s) tested
+We could see smb is hosted in the vm by nmap scan
+
+So we can try connecting to it with smbclient command:
+
+         $smbclient -L 192.168.42.55
+        
+Results:
+
+
+
+
+
+
 
 TogieMYSQL12345^^
-
 
 
 
