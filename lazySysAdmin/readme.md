@@ -153,9 +153,14 @@ Busting directories with nikto:
 
 
 
+
+
 Opening the wordpress in the browser results,
+
+
 ![image](https://github.com/keerthiprabup/VM/assets/116485904/dc99ae95-dc38-4b07-bef4-f893c641b2ed)
 
+        
         
         
         
@@ -176,7 +181,10 @@ Results:
 
 Getting into the sharename share$ using the command:
 
+
+
 Boom! we got a smb client!
+
 ![image](https://github.com/keerthiprabup/VM/assets/116485904/c33db267-e129-4ef0-b5e0-3f1cee52006c)
 
 We could find a config file inside the dir:
@@ -188,9 +196,11 @@ We could find a config file inside the dir:
 
 
 Get the config file to your local system using get command.
+
 ![image](https://github.com/keerthiprabup/VM/assets/116485904/f60d82dd-1311-4f52-b664-19ca36f21c76)
 
 We got some mysql credentials from the file:
+
 ![image](https://github.com/keerthiprabup/VM/assets/116485904/1d69af55-92ee-42b0-8d70-a04bfc3483ed)
 
 
@@ -210,6 +220,7 @@ Results:
 
 
 As we got the username and the password, we could access the ssh server by logging into it:
+
 ![image](https://github.com/keerthiprabup/VM/assets/116485904/5aa57962-26d1-4ec4-a2b1-f74c04edf299)
 
 The user is in the sudoers file so that the user can perform sudo command.
