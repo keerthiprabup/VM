@@ -262,3 +262,11 @@ We got a credentials file in the directory:
 ![image](https://github.com/keerthiprabup/VM/assets/116485904/ffdd5bbb-5a9c-4053-a7ba-6f6e08ed286d)
 
 ### The 4th flag is : {7845658974123568974185412}
+
+We got the password for technawi from here, now we can try logging in with ssh server using this credentials
+
+command:
+
+		$ssh technawi@192.168.42.62
+		password: 3vilH@ksor
+		
