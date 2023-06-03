@@ -269,4 +269,17 @@ command:
 
 		$ssh technawi@192.168.42.62
 		password: 3vilH@ksor
-		
+![image](https://github.com/keerthiprabup/VM/assets/116485904/7b30f750-8c7a-48f0-8d35-dedd87b07213)
+
+technawi has sudo privilages so we can get root access with the command:
+
+		$sudo su
+The fifth flag is in the root directory of the webpage:
+
+		/var/www/html
+
+![image](https://github.com/keerthiprabup/VM/assets/116485904/255fce1e-b801-4e37-8ff9-9d2e9c90d855)
+
+### The 5th flag is : {5473215946785213456975249}
+
+
