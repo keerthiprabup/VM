@@ -6,7 +6,7 @@ Netdiscover result:
 
 Nmap result:
 
-![image](https://github.com/keerthiprabup/VM/assets/116485904/c96de9ea-ecfa-4947-b8d4-6ff2ffa99a53)
+![image](https://github.com/keerthiprabup/VM/blob/main/JIS-CTF/picgit/2.png)
 
 Browse the ip, try for robots.txt
 ![image](https://github.com/keerthiprabup/VM/assets/116485904/1e572a56-80f4-4439-b7ae-6acce58cc274)
