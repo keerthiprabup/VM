@@ -9,7 +9,7 @@ Nmap result:
 ![image](https://github.com/keerthiprabup/VM/blob/main/JIS-CTF/picgit/2.png)
 
 Browse the ip, try for robots.txt
-![image](https://github.com/keerthiprabup/VM/assets/116485904/1e572a56-80f4-4439-b7ae-6acce58cc274)
+![image](https://github.com/keerthiprabup/VM/blob/main/JIS-CTF/picgit/3.png)
 
 The first flag inside the /flag dir
 
@@ -17,7 +17,7 @@ The first flag inside the /flag dir
 
 We got the second flag and some creds from the /admin_area/ dir
 
-![image](https://github.com/keerthiprabup/VM/assets/116485904/cea8bf2e-8c61-4660-8107-8031df2e8b0a)
+![image](https://github.com/keerthiprabup/VM/blob/main/JIS-CTF/picgit/4.png)
 
 creds 
 
@@ -33,7 +33,7 @@ Using the creds we can get loggedin in the login page
     
 We got an index page where we can upload files
 
-![image](https://github.com/keerthiprabup/VM/assets/116485904/9d2394aa-a7e4-4c6c-928c-add53a72faa9)
+![image](https://github.com/keerthiprabup/VM/blob/main/JIS-CTF/picgit/5.png)
 
 
 I'm uploading a php reversing script on the page
@@ -240,15 +240,15 @@ Run the file using the link,
 		
 We got a reverse shell in our terminal:
 
-![image](https://github.com/keerthiprabup/VM/assets/116485904/c42e9567-c6af-4f32-b3fa-6e3d960d2d1d)
+![image](https://github.com/keerthiprabup/VM/blob/main/JIS-CTF/picgit/6.png)
 
 We have some files to check in the dir /var/www/html/
 
-![image](https://github.com/keerthiprabup/VM/assets/116485904/cbb5a17f-bd0b-476d-bca2-0770d1f08ff7)
+![image](https://github.com/keerthiprabup/VM/blob/main/JIS-CTF/picgit/7.png)
 
 The file hint.txt has the next flag
 
-![image](https://github.com/keerthiprabup/VM/assets/116485904/ad591b4f-2ee6-4ffb-a932-5655b3ea634e)
+![image](https://github.com/keerthiprabup/VM/blob/main/JIS-CTF/picgit/8.png)
 
 ### The 3rd flag is : {7645110034526579012345670}
 
@@ -259,7 +259,7 @@ We got a credentials file in the directory:
 
 		./etc/mysql/conf.d/credentials.txt
 
-![image](https://github.com/keerthiprabup/VM/assets/116485904/ffdd5bbb-5a9c-4053-a7ba-6f6e08ed286d)
+![image](https://github.com/keerthiprabup/VM/blob/main/JIS-CTF/picgit/9.png)
 
 ### The 4th flag is : {7845658974123568974185412}
 
@@ -269,7 +269,7 @@ command:
 
 		$ssh technawi@192.168.42.62
 		password: 3vilH@ksor
-![image](https://github.com/keerthiprabup/VM/assets/116485904/7b30f750-8c7a-48f0-8d35-dedd87b07213)
+![image](https://github.com/keerthiprabup/VM/blob/main/JIS-CTF/picgit/10.png)
 
 technawi has sudo privilages so we can get root access with the command:
 
@@ -278,7 +278,7 @@ The fifth flag is in the root directory of the webpage:
 
 		/var/www/html
 
-![image](https://github.com/keerthiprabup/VM/assets/116485904/255fce1e-b801-4e37-8ff9-9d2e9c90d855)
+![image](https://github.com/keerthiprabup/VM/blob/main/JIS-CTF/picgit/11.png)
 
 ### The 5th flag is : {5473215946785213456975249}
 
