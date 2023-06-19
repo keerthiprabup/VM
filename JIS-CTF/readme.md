@@ -2,7 +2,7 @@
 
 Netdiscover result:
 
-![image](https://github.com/keerthiprabup/VM/assets/116485904/9b9d52b8-df6a-41da-ae33-1e2dac3731b8)
+![image](https://github.com/keerthiprabup/VM/blob/main/JIS-CTF/picgit/1.png)
 
 Nmap result:
 
