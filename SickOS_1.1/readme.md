@@ -14,42 +14,45 @@ Netdiscover result:
 
 Nmap result:
 
-    # nmap -sS -sV -p- -A 192.168.42.36
-    Starting Nmap 7.93 ( https://nmap.org ) at 2023-05-30 16:38 IST
-    Nmap scan report for 192.168.42.36
-    Host is up (0.00057s latency).
-    Not shown: 65532 filtered tcp ports (no-response)
-    PORT     STATE  SERVICE    VERSION
-    22/tcp   open   ssh        OpenSSH 5.9p1 Debian 5ubuntu1.1 (Ubuntu Linux; protocol 2.0)
-    | ssh-hostkey: 
-    |   1024 093d29a0da4814c165141e6a6c370409 (DSA)
-    |   2048 8463e9a88e993348dbf6d581abf208ec (RSA)
-    |_  256 51f6eb09f6b3e691ae36370cc8ee3427 (ECDSA)
-    3128/tcp open   http-proxy Squid http proxy 3.1.19
-    |_http-title: ERROR: The requested URL could not be retrieved
-    | http-open-proxy: Potentially OPEN proxy.
-    |_Methods supported: GET HEAD
-    |_http-server-header: squid/3.1.19
-    8080/tcp closed http-proxy
-    MAC Address: 08:00:27:C0:67:CE (Oracle VirtualBox virtual NIC)
-    Device type: general purpose
-    Running: Linux 3.X|4.X
-    OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4
-    OS details: Linux 3.2 - 4.9
-    Network Distance: 1 hop
-    Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
-    TRACEROUTE
-    HOP RTT     ADDRESS
-    1   0.57 ms 192.168.42.36
+              
+              
+              # nmap -sS -sV -p- -A 192.168.42.36
+              Starting Nmap 7.93 ( https://nmap.org ) at 2023-05-30 16:38 IST
+              Nmap scan report for 192.168.42.36
+              Host is up (0.00057s latency).
+              Not shown: 65532 filtered tcp ports (no-response)
+              PORT     STATE  SERVICE    VERSION
+              22/tcp   open   ssh        OpenSSH 5.9p1 Debian 5ubuntu1.1 (Ubuntu Linux; protocol 2.0)
+              | ssh-hostkey: 
+              |   1024 093d29a0da4814c165141e6a6c370409 (DSA)
+              |   2048 8463e9a88e993348dbf6d581abf208ec (RSA)
+              |_  256 51f6eb09f6b3e691ae36370cc8ee3427 (ECDSA)
+              3128/tcp open   http-proxy Squid http proxy 3.1.19
+              |_http-title: ERROR: The requested URL could not be retrieved
+              | http-open-proxy: Potentially OPEN proxy.
+              |_Methods supported: GET HEAD
+              |_http-server-header: squid/3.1.19
+              8080/tcp closed http-proxy
+              MAC Address: 08:00:27:C0:67:CE (Oracle VirtualBox virtual NIC)
+              Device type: general purpose
+              Running: Linux 3.X|4.X
+              OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4
+              OS details: Linux 3.2 - 4.9
+              Network Distance: 1 hop
+              Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+          
+              TRACEROUTE
+              HOP RTT     ADDRESS
+              1   0.57 ms 192.168.42.36
+          
+              OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+              Nmap done: 1 IP address (1 host up) scanned in 133.50 seconds
 
-    OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-    Nmap done: 1 IP address (1 host up) scanned in 133.50 seconds
-
-Open the ip in the browser after changing the proxy of the browser to access the network.
+Change the proxy of the browser to access the network.
 
 ![image](https://github.com/keerthiprabup/VM/assets/116485904/c2e942e1-fd49-4c21-b788-cdd0ab1daf1d)
-
+      
 
 We will get the ip page as:
 ![image](https://github.com/keerthiprabup/VM/assets/116485904/4adb1db3-1ec9-4ea4-ac86-9cb3e6f5c695)
@@ -59,7 +62,7 @@ Putting /robots.txt in the ip
 
 We got a dir /wolfcms
 
-Open it by pasting it in the domain:
+Open it:
 
 ![image](https://github.com/keerthiprabup/VM/assets/116485904/7a217b67-a6c3-4467-bd7b-a19849c17677)
 
@@ -282,10 +285,10 @@ The php reverse shell script I used to upload:
         ?> 
 Upload the reverse shell script
 
-
-You will get the php script uploaded and you can access it in the url
+The script is uploaded in the directory public:
           
           http://192.168.42.36/wolfcms/public/
+          
 Open netcat in our terminal on the port 1234 and then open the link in the browser so that reverse shell can be obtained
 
 Boom we get the reverse shell!!
