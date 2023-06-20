@@ -1,1 +1,4 @@
 # Walkthrough
+
+set aayi mone
+
